@@ -140,9 +140,10 @@
     <vertexScaleByHeightFlag>false</vertexScaleByHeightFlag>
     <vertexScaleByHeight>158</vertexScaleByHeight>
     <waitProcessExitting>false</waitProcessExitting>
-    <pmxAssetPath>Assets/Models/meilier/梅丽尔.pmx</pmxAssetPath>
+    <pmxAssetPath>Assets/Models/huanta/meilier/梅丽尔.pmx</pmxAssetPath>
     <vmdAssetPathList />
     <fbxOutputPath>Assets/Models/meilier/梅丽尔.fbx</fbxOutputPath>
+    <fbxAssetPath>Assets/Models/huanta/meilier/梅丽尔.fbx</fbxAssetPath>
     <bulletPhysicsVersion>_275</bulletPhysicsVersion>
     <useWineFlag>false</useWineFlag>
     <wine>Manual</wine>
@@ -180,5 +181,7 @@
       <selfShadowEnabled>true</selfShadowEnabled>
       <sphereMapEnabled>true</sphereMapEnabled>
     </materialGlobalProperty>
+    <materialProperyList />
+    <materialBlockPropertyList />
   </mmd4MecanimProperty>
 </PMX2FBXConfig>
