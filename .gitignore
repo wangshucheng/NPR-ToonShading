@@ -58,3 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/Assets/ThirdPartyPlugins/MMD4Mecanim
+/Assets/ThirdPartyPlugins/MMD4Mecanim.meta
