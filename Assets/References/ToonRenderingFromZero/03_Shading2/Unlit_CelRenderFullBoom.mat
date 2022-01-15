@@ -28,16 +28,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _OutlineWidth: 0.204
-    - _ShadowRange: 0.836
-    - _ShadowSmooth: 0.0135
+    - _OutlineWidth: 0.4
+    - _RimBloomExp: 1
+    - _RimBloomMulti: 1
+    - _ShadowRange: 0.84
+    - _ShadowSmooth: 0.03
     - _SpecularGloss: 8
-    - _SpecularMulti: 1
+    - _SpecularMulti: 0.7
     - _SpecularRange: 0.146
     m_Colors:
-    - _MainColor: {r: 1, g: 0.5801887, b: 0.5801887, a: 1}
-    - _OutLineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _RimColor: {r: 0.05842829, g: 0.14349608, b: 0.9528302, a: 1}
+    - _MainColor: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
+    - _OutLineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 0.9936832, b: 0.8726415, a: 1}
     - _ShadowColor: {r: 0.18867922, g: 0.18066925, b: 0.18066925, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

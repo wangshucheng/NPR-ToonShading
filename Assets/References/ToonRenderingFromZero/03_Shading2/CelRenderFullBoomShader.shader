@@ -19,10 +19,12 @@ Shader "Unlit/CelRenderFullBoom"
 
 		[Space(20)]
 		_OutlineWidth("Outline Width", Range(0, 1)) = 0.24
-				_OutLineColor("OutLine Color", Color) = (0.5,0.5,0.5,1)
+		_OutLineColor("OutLine Color", Color) = (0.5,0.5,0.5,1)
 
-			[Space(20)]
-			_RimColor("Rim Color", Color) = (1,1,1)
+		[Space(20)]
+		_RimColor("Rim Color", Color) = (1,1,1)
+		_RimBloomExp("Rim Bloom Exp",  Range(1, 10)) = 1
+		_RimBloomMulti("Rim Bloom Multi",  Range(0, 1)) = 0.5
 	}
 
 		SubShader
@@ -56,6 +58,8 @@ Shader "Unlit/CelRenderFullBoom"
 				half _SpecularGloss;
 
 				half4 _RimColor;
+				half _RimBloomExp;
+				half _RimBloomMulti;
 
 				struct a2v
 				{
@@ -111,9 +115,20 @@ Shader "Unlit/CelRenderFullBoom"
 
 					//col.rgb = (diffuse + specular) * _LightColor0.rgb;
 
+					// ±ßÔµ¹â
 					half f = 1.0 - saturate(dot(viewDir, worldNormal));
 					half3 rimColor = f * _RimColor.rgb * _RimColor.a;
 					col.rgb = (diffuse + specular + rimColor) * _LightColor0.rgb;
+
+					// smoothstep
+					//half f = 1.0 - saturate(dot(viewDir, worldNormal));
+					//half rim = smoothstep(_RimMin, _RimMax, f);
+					//rim = smoothstep(0, _RimSmooth, rim);
+					//half3 rimColor = rim * _RimColor.rgb * _RimColor.a;
+
+					half NdotL = max(0, dot(worldNormal, worldLightDir));
+					half rimBloom = pow(f, _RimBloomExp) * _RimBloomMulti * NdotL;
+					col.a = rimBloom;
 
 					return col;
 				}
